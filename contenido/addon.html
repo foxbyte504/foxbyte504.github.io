@@ -1,0 +1,88 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/mod/script.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "config": "js/mod/config.js"
+      }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img src="assets/icon.png" alt="Imagen Principal" id="main-image">
+        <div id="search-container">
+            <span id="search-icon">&#x1F50D;</span>
+            <input type="text" id="search-input" placeholder="Buscar artículo...">
+        </div>
+    </header>
+    <div class="overlay" id="overlay">
+        <aside class="menu" id="menu">
+            <img src="https://i.pinimg.com/736x/59/10/50/59105063285dcb0bda5e70346b5911d9.jpg" alt="Menu Image" class="menu-image">
+            <h2 id="menu-title">Contenido</h2>
+            <ul id="menu-options" style="display: none;">
+                <li><a href="./mapas.html" target="_blank">Mapas</a>
+                <li><a href="./addon.html" target="_blank">Mods</a>
+                <li><a href="contenido/texturas.html" target="_blank">Texturas</a>
+                <li><a href="contenido/skin.html" target="_blank">Skin</a>
+            </ul>
+            <h2 id="pokemon-title" style="text-align: left;">Pokemon</h2>
+            <ul id="pokemon-options" style="display: none;">
+                <a href="otra_pagina.html" target="_blank">Emuladores</a>
+                <a href="otra_pagina.html" target="_blank">Rooms</a>
+                <a href="otra_pagina.html" target="_blank">FanGames</a>
+            </ul>
+            <h2 id="videojuego-title"  style="text-align: left;">Videojuegos</h2>
+            <ul id="videojuego-options" style="display: none;">
+                <a href="otra_pagina.html" target="_blank">Abrir en nueva pestaña</a>
+                <a href="otra_pagina.html" target="_blank">Abrir en nueva pestaña</a>
+            </ul>
+        </aside>
+    </div>
+    <div class="menu-close-button" id="menu-close-button" onclick="closeMenu()"></div>
+    <main>
+        <section id="articles-container">
+            <!-- Los artículos se generarán aquí dinámicamente -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Página</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const overlay = document.getElementById('overlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('menu');
+            const overlay = document.getElementById('overlay');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // Cierra el menú si se hace clic fuera del menú
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('menu');
+            const overlay = document.getElementById('overlay');
+            const menuButton = document.querySelector('.menu-icon');
+
+            if (menu.classList.contains('active') && !menu.contains(event.target) && !menuButton.contains(event.target) && event.target.id !== 'menu-close-button') {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
