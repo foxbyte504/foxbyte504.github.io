@@ -1,0 +1,416 @@
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap); 
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    position: relative;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    /* Make the image rectangular */
+    object-fit: cover; /* Ensure the image covers the area */
+    width: 550%; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure margin auto works */
+    background-color: transparent;
+}
+
+#main-image-text {
+    position: absolute;
+    top: 30%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 24px;
+    color: #ffff;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+}
+
+main {
+    padding: 1em;
+}
+
+#articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.article {
+    width: 30%;
+    margin-bottom: 1em;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article h2 {
+    padding: 0.5em;
+    margin: 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: #fff;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+footer p {
+    margin-right: 10px; 
+}
+
+#discord-button {
+    background-color: #7289DA; 
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+}
+
+#discord-button img {
+    width: 20px; 
+    height: 20px;
+    margin-right: 5px; 
+}
+#header-bar {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    /* margin-bottom: 20px;  */
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .article {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .article {
+        width: 100%;
+    }
+}
+
+/* Estilos para el icono del menú */
+.menu-icon {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 20; 
+}
+
+.menu-icon div {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+}
+
+/* Estilos para el menú lateral */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+    z-index: 10;
+}
+
+.overlay.active {
+    display: block; 
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 11;
+    overflow-y: auto; 
+}
+
+.menu.active {
+    left: 0; 
+}
+
+.menu-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.menu h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu li:last-child {
+    border-bottom: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.menu-close-button {
+    position: absolute;
+    top: 0;
+    left: -30px; 
+    width: 30px;
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 12; 
+    transition: left 0.3s ease; 
+}
+
+.menu-close-button::before {
+    content: '<';
+    font-size: 20px;
+    color: white;
+    transform: rotate(180deg);
+}
+
+.menu.active + .menu-close-button {
+    left: 250px; 
+}
+
+/* Article Menu Styles */
+.article-menu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+    z-index: 1000;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-menu-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.article-menu-content {
+    flex: 1;
+    text-align: left;
+}
+
+.article-menu-description {
+    margin-bottom: 10px;
+}
+
+.article-menu-link {
+    display: block;
+    color: blue;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.article-menu-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Style for menu title arrow */
+#menu-title,
+#pokemon-title,
+#videojuego-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-right: 15px;
+    text-align: left; 
+}
+
+.menu-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Underline menu options on hover */
+#menu-options li a:hover,
+#pokemon-options li a:hover,
+#videojuego-options li a:hover {
+    text-decoration: underline;
+}
+
+/* Search Bar Styles */
+#search-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+}
+
+#search-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+#search-input {
+    display: none;
+    margin-left: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#search-input.active {
+    display: inline-block;
+}
+
+#pc-only-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-top: 10px;
+}
+
+#pc-only-image {
+    max-width: 100px; 
+    height: auto;
+    margin-left: 10px; 
+}
+
+#side-text-container {
+    display: flex;
+    width: 100%; /* Make the container take full width */
+}
+
+#left-text-blocks {
+    width: 70%; /* Adjust as needed */
+    padding: 0px; /* Changed from 10px */
+}
+
+#side-text-block {
+    width: 30%;
+    padding:10px;
+    text-align: left;
+    border-left: 1px solid #ccc; /* Línea gris del lado izquierdo */
+    margin-top: -10px; /*  Adjusted to align with the bottom of the header bar */
+    margin-bottom: 0px;
+    height: calc(120vh - -20px - 60px);
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start of the block */
+}
+
+#side-text-block img {
+    position: absolute;
+    top: 335;
+    left: 1120;
+    width: 5%;
+    height: auto;
+    z-index: 2;
+}
+
+#text-block-1,
+#text-block-2 {
+    padding: 10px;
+    margin-bottom: 0px; /* Changed from 10px */
+}
+
+#separator-line {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0px; /* Changed from 10px */
+}
+
+/* Media query remains the same */
+@media (max-width: 768px) {
+    .article {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .article {
+        width: 100%;
+    }
+}
+
+/* Hide side text block on vertical screens */
+@media (max-aspect-ratio: 1/1) {
+    #side-text-block {
+        display: none;
+    }
+}
