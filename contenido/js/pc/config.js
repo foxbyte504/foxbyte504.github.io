@@ -1,26 +1,14 @@
 export default {
-    mainImage: './assets/Pokemonicon.png',  // Asegúrate de que la imagen está en 'img/'
+    mainImage: './assets/icon2.png',  // Asegúrate de que la imagen está en 'img/'
     articles: [
         {
-            title: 'Action and stuff',
-            imageUrl: './img/articulo1.png',  // Imagen local
-            link1: 'https://link-hub.net/1285228/acciones-and-stuff-122',
-            link2: 'https://pin.it/4axfTBiGz',
-            description: 'This is an optional description for Action and stuff.'
+            title: 'Terraria',
+            imageUrl: './assets/android/',
+            link1: 'https://www.terraria.org/',
+            link2: 'https://store.steampowered.com/app/105600/Terraria/',
+            description: 'Terraria es un videojuego de exploración, construcción y aventura en un mundo abierto con gráficos pixel art en 2D. Fue lanzado en 2011 por Re-Logic y ha evolucionado con numerosas actualizaciones. En el juego, los jugadores pueden excavar, recolectar recursos, fabricar objetos, construir estructuras y luchar contra enemigos y jefes.   El mundo de Terraria es proceduralmente generado, lo que significa que cada partida es diferente. Hay biomas variados como bosques, desiertos, mazmorras y el Inframundo, con enemigos únicos en cada zona. Además, se pueden encontrar NPCs que ofrecen misiones y objetos especiales.',
+            developer: 'Re-Logic',
+            genre: 'Sandbox, Aventura, Supervivencia, Acción-RPG'
         },
-        {
-            title: 'Artículo 2',
-            imageUrl: './img/articulo2.png',  // Imagen local
-            link1: 'https://www.ejemplo.com/articulo2_link1',
-            link2: 'https://www.ejemplo.com/articulo2_link2',
-            description: 'Optional description for Artículo 2.'
-        },
-        {
-            title: 'Artículo 3',
-            imageUrl: './img/articulo3.png',  // Imagen local
-            link1: 'https://www.ejemplo.com/articulo3_link1',
-            link2: 'https://www.ejemplo.com/articulo3_link2',
-            description: 'Optional description for Artículo 3.'
-        }
     ]
 };

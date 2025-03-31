@@ -1,4 +1,4 @@
-import config from './ll.js';
+import config from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('main-image');
@@ -89,19 +89,34 @@ document.addEventListener('DOMContentLoaded', () => {
             contentDiv.appendChild(description);
         }
 
+        // Add developer and genre information
+        if (article.developer) {
+            const developer = document.createElement('p');
+            developer.textContent = `Creado por: ${article.developer}`;
+            developer.classList.add('article-menu-developer');
+            contentDiv.appendChild(developer);
+        }
+
+        if (article.genre) {
+            const genre = document.createElement('p');
+            genre.textContent = `Genero: ${article.genre}`;
+            genre.classList.add('article-menu-genre');
+            contentDiv.appendChild(genre);
+        }
+
         const downloadsTitle = document.createElement('h3');
         downloadsTitle.textContent = 'Descargas';
         contentDiv.appendChild(downloadsTitle);
 
         const downloadLink1 = document.createElement('a');
         downloadLink1.href = article.link1;
-        downloadLink1.textContent = article.title;
+        downloadLink1.textContent = `Descargar ${article.title} por MediaFire`;
         downloadLink1.classList.add('article-menu-link');
         contentDiv.appendChild(downloadLink1);
 
         const downloadLink2 = document.createElement('a');
         downloadLink2.href = article.link2;
-        downloadLink2.textContent = 'Enlace del creador';
+        downloadLink2.textContent = `Comprar ${article.title} en su página oficial`;
         downloadLink2.classList.add('article-menu-link');
         contentDiv.appendChild(downloadLink2);
 
@@ -138,7 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Generar los artículos dinámicamente desde la configuración
-    config.articles.forEach(article => {
+    // Mostrar solo el primer artículo
+    if (config.articles.length > 0) {
+        const article = config.articles[0];
         const articleElement = document.createElement('div');
         articleElement.classList.add('article');
 
@@ -170,5 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         articlesContainer.appendChild(articleElement);
+    }
+
+    // Close article menu if clicked outside of it
+    document.addEventListener('click', (event) => {
+        if (currentMenu && !currentMenu.contains(event.target) && !event.target.classList.contains('article')) {
+            currentMenu.style.display = 'none';
+            currentMenu = null;
+        }
     });
 });

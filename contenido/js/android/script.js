@@ -89,19 +89,34 @@ document.addEventListener('DOMContentLoaded', () => {
             contentDiv.appendChild(description);
         }
 
+        // Add developer and genre information
+        if (article.developer) {
+            const developer = document.createElement('p');
+            developer.textContent = `Developer: ${article.developer}`;
+            developer.classList.add('article-menu-developer');
+            contentDiv.appendChild(developer);
+        }
+
+        if (article.genre) {
+            const genre = document.createElement('p');
+            genre.textContent = `Genre: ${article.genre}`;
+            genre.classList.add('article-menu-genre');
+            contentDiv.appendChild(genre);
+        }
+
         const downloadsTitle = document.createElement('h3');
         downloadsTitle.textContent = 'Descargas';
         contentDiv.appendChild(downloadsTitle);
 
         const downloadLink1 = document.createElement('a');
         downloadLink1.href = article.link1;
-        downloadLink1.textContent = article.title;
+        downloadLink1.textContent = `Descargar ${article.title} por MediaFire`;
         downloadLink1.classList.add('article-menu-link');
         contentDiv.appendChild(downloadLink1);
 
         const downloadLink2 = document.createElement('a');
         downloadLink2.href = article.link2;
-        downloadLink2.textContent = 'Enlace del creador';
+        downloadLink2.textContent = `Comprar ${article.title} en su página oficial`;
         downloadLink2.classList.add('article-menu-link');
         contentDiv.appendChild(downloadLink2);
 
@@ -137,38 +152,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Generar los artículos dinámicamente desde la configuración
-    config.articles.forEach(article => {
-        const articleElement = document.createElement('div');
-        articleElement.classList.add('article');
+    // Function to generate articles dynamically from the configuration
+    const generateArticles = () => {
+        config.articles.forEach(article => {
+            const articleElement = document.createElement('div');
+            articleElement.classList.add('article');
 
-        const imageElement = document.createElement('img');
-        imageElement.src = article.imageUrl;
-        imageElement.alt = article.title;
+            const imageElement = document.createElement('img');
+            imageElement.src = article.imageUrl;
+            imageElement.alt = article.title;
 
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = article.title;
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = article.title;
 
-        articleElement.appendChild(imageElement);
-        articleElement.appendChild(titleElement);
+            articleElement.appendChild(imageElement);
+            articleElement.appendChild(titleElement);
 
-        // Crear el menú del artículo y almacenarlo
-        const articleMenu = createArticleMenu(article);
-        articleMenu.style.display = 'none'; // Initially hide the menu
+            // Crear el menú del artículo y almacenarlo
+            const articleMenu = createArticleMenu(article);
+            articleMenu.style.display = 'none'; // Initially hide the menu
 
-        articleElement.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+            articleElement.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
 
-            // Close the currently open menu, if any
-            if (currentMenu && currentMenu !== articleMenu) {
-                currentMenu.style.display = 'none';
-            }
+                // Close the currently open menu, if any
+                if (currentMenu && currentMenu !== articleMenu) {
+                    currentMenu.style.display = 'none';
+                }
 
-            articleMenu.style.display = 'block';
-            currentMenu = articleMenu; // Set the current menu to the newly opened menu
+                articleMenu.style.display = 'block';
+                currentMenu = articleMenu; // Set the current menu to the newly opened menu
+            });
+
+            articlesContainer.appendChild(articleElement);
         });
+    };
 
-        articlesContainer.appendChild(articleElement);
+    // Call the function to generate articles
+    generateArticles();
+
+    // Close article menu if clicked outside of it
+    document.addEventListener('click', (event) => {
+        if (currentMenu && !currentMenu.contains(event.target) && !event.target.classList.contains('article')) {
+            currentMenu.style.display = 'none';
+            currentMenu = null;
+        }
     });
 });

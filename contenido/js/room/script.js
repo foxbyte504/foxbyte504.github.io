@@ -1,4 +1,4 @@
-import config from './ll.js';
+import config from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('main-image');
