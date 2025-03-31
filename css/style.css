@@ -39,41 +39,6 @@ main {
     padding: 1em;
 }
 
-#articles-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.article {
-    width: 30%;
-    margin-bottom: 1em;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.article:hover {
-    transform: translateY(-5px);
-}
-
-.article img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.article h2 {
-    padding: 0.5em;
-    margin: 0;
-    font-size: 1.2em;
-    text-align: center;
-}
-
 footer {
     text-align: center;
     padding: 1em 0;
@@ -118,11 +83,21 @@ footer p {
     .article {
         width: 45%;
     }
+
+    #main-image-text {
+        font-size: 18px;
+        top: 25%;
+        left: 50%;
+    }
 }
 
 @media (max-width: 480px) {
     .article {
         width: 100%;
+    }
+    #main-image-text {
+        font-size: 16px;
+        top: 20%;
     }
 }
 
@@ -288,6 +263,49 @@ footer p {
     cursor: pointer;
 }
 
+/* Terms and Conditions Menu */
+#terms-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    z-index: 1000;
+    max-width: 80%; /* Adjust maximum width for better readability */
+    max-height: 80%; /* Limit height to prevent overflow */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#terms-menu h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#terms-menu h2 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#terms-menu p {
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+#terms-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 /* Style for menu title arrow */
 #menu-title,
 #pokemon-title,
@@ -396,19 +414,6 @@ footer p {
 }
 
 /* Media query remains the same */
-@media (max-width: 768px) {
-    .article {
-        width: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .article {
-        width: 100%;
-    }
-}
-
-/* Hide side text block on vertical screens */
 @media (max-aspect-ratio: 1/1) {
     #side-text-block {
         display: none;

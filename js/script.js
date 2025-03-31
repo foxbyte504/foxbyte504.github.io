@@ -1,5 +1,3 @@
-import config from './config.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('main-image');
     const articlesContainer = document.getElementById('articles-container');
@@ -71,74 +69,5 @@ document.addEventListener('DOMContentLoaded', () => {
             menu.style.display = 'none';
             currentMenu = null; // Reset the current menu
         });
-        menu.appendChild(closeButton);
-
-        const image = document.createElement('img');
-        image.src = article.imageUrl;
-        image.alt = article.title;
-        image.classList.add('article-menu-image');
-        menu.appendChild(image);
-
-        const contentDiv = document.createElement('div');
-        contentDiv.classList.add('article-menu-content');
-
-        if (article.description) {
-            const description = document.createElement('p');
-            description.textContent = article.description;
-            description.classList.add('article-menu-description');
-            contentDiv.appendChild(description);
-        }
-
-        const downloadsTitle = document.createElement('h3');
-        downloadsTitle.textContent = 'Descargas';
-        contentDiv.appendChild(downloadsTitle);
-
-        const downloadLink1 = document.createElement('a');
-        downloadLink1.href = article.link1;
-        downloadLink1.textContent = article.title;
-        downloadLink1.classList.add('article-menu-link');
-        contentDiv.appendChild(downloadLink1);
-
-        const downloadLink2 = document.createElement('a');
-        downloadLink2.href = article.link2;
-        downloadLink2.textContent = 'Enlace del creador';
-        downloadLink2.classList.add('article-menu-link');
-        contentDiv.appendChild(downloadLink2);
-
-        menu.appendChild(contentDiv); // Append the content div to the menu
-
-        document.body.appendChild(menu);
-        return menu;
     };
-
-    // Function to filter articles based on search input
-    const filterArticles = (searchTerm) => {
-        const articles = document.querySelectorAll('.article');
-        articles.forEach(article => {
-            const title = article.querySelector('h2').textContent.toLowerCase();
-            if (title.includes(searchTerm.toLowerCase())) {
-                article.style.display = 'block';
-            } else {
-                article.style.display = 'none';
-            }
-        });
-    };
-
-    // Event listener for search input
-    searchInput.addEventListener('input', () => {
-        filterArticles(searchInput.value);
-    });
-
-    // Event listener for search icon
-    searchIcon.addEventListener('click', () => {
-        searchInput.classList.toggle('active');
-        if (searchInput.classList.contains('active')) {
-            searchInput.focus();
-        }
-    });
-
-    // Generar los artículos dinámicamente desde la configuración
-    config.articles.forEach(article => {
-        const articleElement = document.createElement('div');
-    });
 });

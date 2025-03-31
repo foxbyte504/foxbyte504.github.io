@@ -6,13 +6,7 @@
     <title>RedFox</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/script.js"></script>
-    <script type="importmap">
-    {
-      "imports": {
-        "config": "./config.js"
-      }
-    }
-    </script>
+    <script type="importmap"></script>
 </head>
 
 <body>
@@ -35,7 +29,7 @@
     <div class="overlay" id="overlay">
         <aside class="menu" id="menu">
             <img src="assets/baricon.png" alt="Menu Image" class="menu-image">
-            <h2 id="menu-title">Cosntenido</h2>
+            <h2 id="menu-title">Contenido</h2>
             <ul id="menu-options" style="display: none;">
                 <li><a href="contenido/mapas.html" target="_self">Mapas</a>
                 <li><a href="contenido/addon.html" target="_self">Mods</a>
@@ -44,15 +38,21 @@
             </ul>
             <h2 id="pokemon-title" style="text-align: left;">Pokemon</h2>
             <ul id="pokemon-options" style="display: none;">
-                <li><a href="emuladores.html">Emuladores</a></li>
-                <li><a href="rooms.html">Rooms</a></li>
-                <li><a href="fangames.html">FanGames</a></li>
+                <li><a href="contenido/emuladores.html">Emuladores</a></li>
+                <li><a href="contenido/rooms.html">Rooms</a></li>
+                <li><a href="contenido/fangames.html">FanGames</a></li>
             </ul>
             <h2 id="videojuego-title" style="text-align: left;">Videojuegos</h2>
             <ul id="videojuego-options" style="display: none;">
-                <li><a href="android.html">Android</a></li>
-                <li><a href="computadora.html">Computadora</a></li>
+                <li><a href="contenido/android.html">Android</a></li>
+                <li><a href="contenido/computadora.html">Computadora</a></li>
             </ul>
+            <h2 style="text-align: left;">
+                <a href="https://www.virustotal.com/gui/home/url" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="assets/virustotal_logo_icon_171247.png" alt="VirusTotal" style="width: 24px; height: 24px; margin-right: 5px;">
+                    <span style="color: rgb(0, 26, 255);">VirusTotal</span>
+                </a>
+            </h2>
         </aside>
     </div>
     <div class="menu-close-button" id="menu-close-button" onclick="closeMenu()"></div>
@@ -85,13 +85,13 @@
                         
                         <p>En <b>FoxByte Gaming</b>, creemos en la evolución constante del gaming y en la creación de espacios donde todos los jugadores puedan sentirse parte de algo grande.</p>
                         
-                        <h2>🌟 <b>¡Únete a nuestra comunidad y vive el gaming al máximo!</b> 🌟</h2>
+                        <h2> <b>¡Únete a nuestra comunidad y vive el gaming al máximo!</b> </h2>
                     </body>
                     </html>
                                     </div>
                 <div id="separator-line"></div>
                 <div id="text-block-2">
-                    <h2><b>🎮 Área Recreativa</b></h2>
+                    <h2><b> Área Recreativa</b></h2>
                     <p>Esta página es un espacio <b>recreativo</b> donde se comparten complementos bajo un formato de <b>código abierto</b>. Cualquier persona puede participar y aportar contenido.</p>
                     <p>Por favor, no subas contenido de pago. Si decides compartirlo, asegúrate de incluir un <b>segundo enlace</b> que dirija al complemento original.</p>
                     <p>Si algún contenido es eliminado, no se notificará al responsable, ya que esta es una plataforma privada.</p>
@@ -103,6 +103,9 @@
                 <p>Si encuentras algún complemento fuera de lugar, por favor <b>infórmalo</b> para que podamos revisarlo.</p>
                 <p>Esta página puede contener mods de pago, ya que funciona bajo un sistema de <b>código abierto</b>. Sin embargo, se busca mantener un ambiente sano y respetuoso.</p>
                 <p>Cualquier responsabilidad recae sobre el <b>dueño original</b> del contenido, cuyo nombre no se conoce. <b>FoxByte</b> solo funciona como un área recreativa para la comunidad.</p>
+                <h2><b>Seguridad y Confianza</b></h2>
+                <p>En nuestra plataforma, la seguridad es una prioridad. Todos los archivos que ofrecemos, especialmente los videojuegos, son analizados con herramientas avanzadas como <b>VirusTotal</b> y otras páginas de detección de amenazas. Esto nos permite asegurarnos de que estén libres de virus, malware o cualquier otro tipo de software dañino.</p>
+                <p>Si tienes alguna duda o quieres verificar un archivo por tu cuenta, puedes encontrar el enlace a VirusTotal en el menú de nuestra página. Tu confianza es lo más importante para nosotros.</p>
             </div>
     </main>
     <footer>
@@ -112,7 +115,7 @@
                 <img src="assets/discord-logo.png" alt="Discord Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 1px;">
                 Discord
             </a> |
-            <a href="mailto:juanfigeroa504@gmail.com" style="color: white; text-decoration: none;">
+            <a href="/cdn-cgi/l/email-protection#056f70646b636c6260776a64303531456268646c692b666a68" style="color: white; text-decoration: none;">
                 <img src="assets/gmail-new.png" alt="Reportar Error" style="width: 22px; height: 22px; vertical-align: middle; margin-right: 1px;">
                 Reportar error
             </a>
@@ -121,6 +124,7 @@
 
     <div id="terms-menu" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid black; z-index: 1000;">
         <h1>Términos y Condiciones</h1>
+        <button id="terms-close-button" onclick="closeTermsMenu()">X</button>
     
         <p><b>Última actualización:</b> [Fecha de actualización]</p>
     
@@ -143,9 +147,9 @@
         <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Se recomienda revisar esta página periódicamente.</p>
     
         <h2>7. Contacto</h2>
-        <p>Si tienes dudas sobre estos términos, puedes contactarnos a través de nuestro correo: <a href="mailto:tucorreo@example.com">tucorreo@example.com</a></p>
+        <p>Si tienes dudas sobre estos términos, puedes contactarnos a través de nuestro correo: <a href="/cdn-cgi/l/email-protection#e48e91858a828d8381968b85d1d4d0a48389858d88ca878b89"><span class="__cf_email__" data-cfemail="d9b3acb8b7bfb0bebcabb6b8ece9ed99beb4b8b0b5f7bab6b4">[email&#160;protected]</span></a></p>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const overlay = document.getElementById('overlay');
@@ -168,6 +172,11 @@
 
             if (menu.classList.contains('active') && !menu.contains(event.target) && !menuButton.contains(event.target) && event.target.id !== 'menu-close-button') {
                 closeMenu();
+            }
+
+            const termsMenu = document.getElementById('terms-menu');
+            if (termsMenu.style.display === 'block' && !termsMenu.contains(event.target) && event.target.id !== 'terms-close-button') {
+                closeTermsMenu();
             }
         });
 
