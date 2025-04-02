@@ -8,7 +8,7 @@
     <script type="importmap">
     {
       "imports": {
-        "config": "js/texturas/config.js"
+        "config": "config.js"
       }
     }
     </script>
@@ -29,6 +29,7 @@
     <div class="overlay" id="overlay">
         <aside class="menu" id="menu">
             <img src="./assets/baricon.png" alt="Menu Image" class="menu-image">
+            <h2 style="text-align: left;"><a href="../index.html" target="_self">Volver al inicio</a></h2>
             <h2 id="menu-title">Contenido</h2>
             <ul id="menu-options" style="display: none;">
                 <li><a href="./mapas.html" target="_self">Mapas</a>
@@ -38,15 +39,21 @@
                 </ul>
             <h2 id="pokemon-title" style="text-align: left;">Pokemon</h2>
             <ul id="pokemon-options" style="display: none;">
-                <a href="otra_pagina.html" target="_blank">Emuladores</a>
-                <a href="otra_pagina.html" target="_blank">Rooms</a>
-                <a href="otra_pagina.html" target="_blank">FanGames</a>
+                <li><a href="./emuladores.html" target="_self">Emuladores</a></li>
+                <li><a href="./room.html" target="_self">Rooms</a>
+                <li><a href="./fanroom.html" target="_self">FanGames</a></li>
             </ul>
             <h2 id="videojuego-title"  style="text-align: left;">Videojuegos</h2>
             <ul id="videojuego-options" style="display: none;">
-                <a href="otra_pagina.html" target="_blank">Abrir en nueva pestaña</a>
-                <a href="otra_pagina.html" target="_blank">Abrir en nueva pestaña</a>
+                <li><a href="./android.html" target="_self">Android games</a></li>
+                <li><a href="./pc.html" target="_self">Pc games</a></li>
             </ul>
+            <h2 style="text-align: left;">
+                <a href="https://www.virustotal.com/gui/home/url" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="../assets/virustotal_logo_icon_171247.png" alt="VirusTotal" style="width: 20px; height: 20px; margin-right: 5px;">
+                    <span style="color: rgb(0, 26, 255);">VirusTotal</span>
+                </a>
+            </h2>
         </aside>
     </div>
     <div class="menu-close-button" id="menu-close-button" onclick="closeMenu()"></div>
@@ -55,9 +62,7 @@
             <!-- Los artículos se generarán aquí dinámicamente -->
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Mi Página</p>
-    </footer>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
@@ -84,5 +89,18 @@
             }
         });
     </script>
-</body>
+      <footer>
+        <p style="color: white;">
+            <a href="#" onclick="openTermsMenu()" style="color: white; text-decoration: none;">Términos y Condiciones</a> |
+            <a href="https://discord.gg/zPbACJtkRu" target="_blank" style="color: white; text-decoration: none;">
+                <img src="../assets/discord-logo.png" alt="Discord Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 1px;">
+                Discord
+            </a> |
+            <a href="/cdn-cgi/l/email-protection#f9938c98979f909e9c8b9698ccc9cdb99e94989095d79a9694" style="color: white; text-decoration: none;">
+                <img src="../assets/gmail-new.png" alt="Reportar Error" style="width: 22px; height: 22px; vertical-align: middle; margin-right: 1px;">
+                Reportar error
+            </a>
+        </p>
+    </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
