@@ -61,7 +61,7 @@ footer {
     text-align: center;
     padding: 1em 0;
     background-color: #333;
-    color: #ffffff;
+    color: #000000;
 }
 
 /* Article Menu Styles */
@@ -77,9 +77,35 @@ footer {
     box-shadow: 0 4px 8px rgb(255, 255, 255);
     z-index: 1000;
     text-align: left;
+    /* Set a fixed width and height */
+    width: 80%;
+    height: 80%;
+    max-width: 800px; /* Adjust as needed */
+    max-height: 600px; /* Adjust as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start to accommodate scrolling */
+}
+
+.article-menu::-webkit-scrollbar {
+    width: 8px; /* Adjust as needed */
+}
+
+/* Track */
+.article-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.article-menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px; /* Adjust as needed */
+}
+
+/* Handle on hover */
+.article-menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .article-menu-image {
@@ -87,11 +113,14 @@ footer {
     height: auto;
     border-radius: 8px;
     margin-right: 20px;
+    flex-shrink: 0; /* Prevent image from shrinking */
 }
 
 .article-menu-content {
     flex: 1;
     text-align: left;
+    font-size: 1.1em; /* Increase font size */
+    line-height: 1.4; /* Improve readability */
 }
 
 .article-menu-description {

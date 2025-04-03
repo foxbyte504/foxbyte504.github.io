@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImage.src = config.mainImage;
     mainImage.alt = 'Imagen Principal';
 
-    // Función para crear el menú del artículo
+    // Function to create the article menu
     const createArticleMenu = (article) => {
         const menu = document.createElement('div');
         menu.classList.add('article-menu');
@@ -152,42 +152,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Generar los artículos dinámicamente desde la configuración
-    // Mostrar solo el primer artículo
-    if (config.articles.length > 0) {
-        const article = config.articles[0];
-        const articleElement = document.createElement('div');
-        articleElement.classList.add('article');
+    // Function to generate articles dynamically from the configuration
+    const generateArticles = () => {
+        config.articles.forEach(article => {
+            const articleElement = document.createElement('div');
+            articleElement.classList.add('article');
 
-        const imageElement = document.createElement('img');
-        imageElement.src = article.imageUrl;
-        imageElement.alt = article.title;
+            const imageElement = document.createElement('img');
+            imageElement.src = article.imageUrl;
+            imageElement.alt = article.title;
 
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = article.title;
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = article.title;
 
-        articleElement.appendChild(imageElement);
-        articleElement.appendChild(titleElement);
+            articleElement.appendChild(imageElement);
+            articleElement.appendChild(titleElement);
 
-        // Crear el menú del artículo y almacenarlo
-        const articleMenu = createArticleMenu(article);
-        articleMenu.style.display = 'none'; // Initially hide the menu
+            // Crear el menú del artículo y almacenarlo
+            const articleMenu = createArticleMenu(article);
+            articleMenu.style.display = 'none'; // Initially hide the menu
 
-        articleElement.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
+            articleElement.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
 
-            // Close the currently open menu, if any
-            if (currentMenu && currentMenu !== articleMenu) {
-                currentMenu.style.display = 'none';
-            }
+                // Close the currently open menu, if any
+                if (currentMenu && currentMenu !== articleMenu) {
+                    currentMenu.style.display = 'none';
+                }
 
-            articleMenu.style.display = 'block';
-            currentMenu = articleMenu; // Set the current menu to the newly opened menu
+                articleMenu.style.display = 'block';
+                currentMenu = articleMenu; // Set the current menu to the newly opened menu
+            });
+
+            articlesContainer.appendChild(articleElement);
         });
+    };
 
-        articlesContainer.appendChild(articleElement);
-    }
+    // Call the function to generate articles
+    generateArticles();
 
     // Close article menu if clicked outside of it
     document.addEventListener('click', (event) => {

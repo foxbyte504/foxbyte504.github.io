@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImage.src = config.mainImage;
     mainImage.alt = 'Imagen Principal';
 
-    // Función para crear el menú del artículo
+    // Function to create the article menu
     const createArticleMenu = (article) => {
         const menu = document.createElement('div');
         menu.classList.add('article-menu');
@@ -92,14 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add developer and genre information
         if (article.developer) {
             const developer = document.createElement('p');
-            developer.textContent = `Developer: ${article.developer}`;
+            developer.textContent = `Creado por: ${article.developer}`;
             developer.classList.add('article-menu-developer');
             contentDiv.appendChild(developer);
         }
 
         if (article.genre) {
             const genre = document.createElement('p');
-            genre.textContent = `Genre: ${article.genre}`;
+            genre.textContent = `Genero: ${article.genre}`;
             genre.classList.add('article-menu-genre');
             contentDiv.appendChild(genre);
         }

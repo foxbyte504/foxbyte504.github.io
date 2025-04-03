@@ -72,6 +72,15 @@ export default {
             description: '​Plants vs. Zombies: Edición Fusión es una modificación no oficial del clásico juego de defensa de torres Plants vs. Zombies. Desarrollada por fanáticos, esta versión introduce una mecánica innovadora que permite a los jugadores fusionar diferentes plantas para crear híbridos con habilidades únicas, ofreciendo una experiencia de juego renovada y estratégica. El segundo enlace es del sition oficial, aun es gratuito.',
             developer: 'PVZ Fusion',
             genre: 'Estrategias, Defensa de torres y Cartas'
-        }
+        },
+        {
+            title: 'Hollow Knight',
+            imageUrl: './assets/window/header (1).jpg',
+            link1: 'https://link-target.net/1285228/holow-knight-android',
+            link2: 'https://store.steampowered.com/app/367520/Hollow_Knight/?l=spanish',
+            description: 'Hollow Knight es un Metroidvania en 2D con una estética dibujada a mano y una historia profunda llena de misterio. En el juego, controlas a un pequeño caballero explorando el reino subterráneo de Hallownest, enfrentando enemigos desafiantes, desbloqueando habilidades y descubriendo secretos ocultos.',
+            developer: 'Team Cherry',
+            genre: 'Metroidvania, Acción, Aventura'
+        },
     ]
 };
