@@ -1,193 +1,102 @@
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedFox</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="js/script.js"></script>
-    <script type="importmap"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Nahuel Community • Inicio</title>
+
+<link rel="stylesheet" href="/style/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <header>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <img src="assets/foxicon.jpg" alt="Imagen Principal" id="main-image">
-        <p id="main-image-text">SocialCraft</p>
-        <div id="header-bar">
-        una extencion de <b>FoxByte</b>
+
+  <!-- overlay & sidebar -->
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="close-text">Acceso rápido</span>
+      <div class="close-btn" id="closeSidebar">✕</div>
     </div>
-         <div id="search-container">
-             <span id="search-icon">&#x1F50D;</span>
-             <input type="text" id="search-input" placeholder="Buscar artículo...">
-         </div>
-    </header>
-    <div class="overlay" id="overlay">
-        <aside class="menu" id="menu">
-            <img src="assets/baricon.png" alt="Menu Image" class="menu-image">
-            <h2 id="menu-title">Contenido</h2>
-            <ul id="menu-options" style="display: none;">
-                <li><a href="contenido/mapas.html" target="_self">Mapas</a>
-                <li><a href="contenido/addon.html" target="_self">Mods</a>
-                <li><a href="contenido/texturas.html" target="_self">Texturas</a>
-                <li><a href="contenido/skin.html" target="_self">Skin</a>
-            </ul>
-            <h2 id="pokemon-title" style="text-align: left;">Pokemon</h2>
-            <ul id="pokemon-options" style="display: none;">
-                <li><a href="contenido/emuladores.html">Emuladores</a></li>
-                <li><a href="contenido/rooms.html">Rooms</a></li>
-                <li><a href="contenido/fangames.html">FanGames</a></li>
-            </ul>
-            <h2 id="videojuego-title" style="text-align: left;">Videojuegos</h2>
-            <ul id="videojuego-options" style="display: none;">
-                <li><a href="contenido/android.html">Android</a></li>
-                <li><a href="contenido/pc.html">Computadora</a></li>
-            </ul>
-            <h2 style="text-align: left;">
-                <a href="https://www.virustotal.com/gui/home/url" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="assets/virustotal_logo_icon_171247.png" alt="VirusTotal" style="width: 24px; height: 24px; margin-right: 5px;">
-                    <span style="color: rgb(0, 26, 255);">VirusTotal</span>
-                </a>
-            </h2>
-        </aside>
+    <nav>
+      <a href="/page/game.html">Minecraft Mods</a>
+      <a href="#">Minecraft Skin's</a>
+      <a href="/page/game.html?platform=computer">Juegos para teléfono</a>
+      <a href="/page/game.html?platform=android">Juegos para computadora</a>
+    </nav>
+  </aside>
+
+  <!-- CARRUSEL -->
+  <header class="index-header">
+    <div class="carousel" id="carousel">
+      <!-- Updated paths for images 2, 3, 4 -->
+      <div class="carousel-item"><img src="/public/img/portada/1.jpg" alt=""></div>
+      <div class="carousel-item"><img src="/public/img/portada/2.jpg" alt=""></div>
+      <div class="carousel-item"><img src="/public/img/portada/3.jpg" alt=""></div>
+      <div class="carousel-item"><img src="/public/img/portada/4.jpg" alt=""></div>
     </div>
-    <div class="menu-close-button" id="menu-close-button" onclick="closeMenu()"></div>
-    <main>
-        <section id="articles-container">
-            <!-- Los artículos se generarán aquí dinámicamente -->
-        </section>
-        <div id="side-text-container">
-            <div id="left-text-blocks">
-                <div id="text-block-1">
-                    <!DOCTYPE html>
-                    <html lang="es">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>FoxByte Gaming</title>
-                    </head>
-                    <body>
-                        <h1><b>Bienvenido a FoxByte Gaming</b></h1>
-                        
-                        <p>En <b>FoxByte Gaming</b>, llevamos tu experiencia al siguiente nivel. Nuestra plataforma es el punto de encuentro ideal para los amantes de los videojuegos, mods de Minecraft y el universo Pokémon. Somos una extensión de <b>FoxByte</b>, creada con el objetivo de ofrecerte una comunidad vibrante y los mejores recursos para potenciar tu pasión por el gaming.</p>
-                        
-                        <h2><b>¿Qué ofrecemos?</b></h2>
-                        <ul>
-                            <li><b>Mods de Minecraft:</b> Descubre y descarga los mejores mods para mejorar tu experiencia en el juego.</li>
-                            <li><b>Videojuegos:</b> Noticias, reseñas y recomendaciones de los títulos más populares del momento.</li>
-                            <li><b>Pokémon:</b> Contenido exclusivo sobre la saga, desde guías hasta novedades y estrategias.</li>
-                            <li><b>Comunidad Gamer:</b> Conéctate con otros jugadores, comparte experiencias y descubre servidores y eventos.</li>
-                        </ul>
-                        
-                        <p>En <b>FoxByte Gaming</b>, creemos en la evolución constante del gaming y en la creación de espacios donde todos los jugadores puedan sentirse parte de algo grande.</p>
-                        
-                        <h2> <b>¡Únete a nuestra comunidad y vive el gaming al máximo!</b> </h2>
-                    </body>
-                    </html>
-                                    </div>
-                <div id="separator-line"></div>
-                <div id="text-block-2">
-                    <h2><b> Área Recreativa</b></h2>
-                    <p>Esta página es un espacio <b>recreativo</b> donde se comparten complementos bajo un formato de <b>código abierto</b>. Cualquier persona puede participar y aportar contenido.</p>
-                    <p>Por favor, no subas contenido de pago. Si decides compartirlo, asegúrate de incluir un <b>segundo enlace</b> que dirija al complemento original.</p>
-                    <p>Si algún contenido es eliminado, no se notificará al responsable, ya que esta es una plataforma privada.</p>
-                </div>
-            </div>
-            <div id="side-text-block">
-                <img src="assets/fox.png" alt="Side Image">
-                <h2><b>Aviso Importante</b></h2>
-                <p>Si encuentras algún complemento fuera de lugar, por favor <b>infórmalo</b> para que podamos revisarlo.</p>
-                <p>Esta página puede contener mods de pago, ya que funciona bajo un sistema de <b>código abierto</b>. Sin embargo, se busca mantener un ambiente sano y respetuoso.</p>
-                <p>Cualquier responsabilidad recae sobre el <b>dueño original</b> del contenido, cuyo nombre no se conoce. <b>FoxByte</b> solo funciona como un área recreativa para la comunidad.</p>
-                <h2><b>Seguridad y Confianza</b></h2>
-                <p>En nuestra plataforma, la seguridad es una prioridad. Todos los archivos que ofrecemos, especialmente los videojuegos, son analizados con herramientas avanzadas como <b>VirusTotal</b> y otras páginas de detección de amenazas. Esto nos permite asegurarnos de que estén libres de virus, malware o cualquier otro tipo de software dañino.</p>
-                <p>Si tienes alguna duda o quieres verificar un archivo por tu cuenta, puedes encontrar el enlace a VirusTotal en el menú de nuestra página. Tu confianza es lo más importante para nosotros.</p>
-            </div>
-    </main>
-    <footer>
-        <p style="color: white;">
-            <a href="#" onclick="openTermsMenu()" style="color: white; text-decoration: none;">Términos y Condiciones</a> |
-            <a href="https://discord.gg/zPbACJtkRu" target="_blank" style="color: white; text-decoration: none;">
-                <img src="assets/discord-logo.png" alt="Discord Logo" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 1px;">
-                Discord
-            </a> |
-            <a href="/cdn-cgi/l/email-protection#056f70646b636c6260776a64303531456268646c692b666a68" style="color: white; text-decoration: none;">
-                <img src="assets/gmail-new.png" alt="Reportar Error" style="width: 22px; height: 22px; vertical-align: middle; margin-right: 1px;">
-                Reportar error
-            </a>
-        </p>
-    </footer>
-
-    <div id="terms-menu" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid black; z-index: 1000;">
-        <h1>Términos y Condiciones</h1>
-        <button id="terms-close-button" onclick="closeTermsMenu()">X</button>
-    
-        <p><b>Última actualización:</b> [Fecha de actualización]</p>
-    
-        <h2>1. Introducción</h2>
-        <p>Bienvenido a nuestra plataforma. Al acceder y utilizar esta página web, aceptas cumplir con estos términos y condiciones. Si no estás de acuerdo, por favor, no utilices nuestro sitio.</p>
-    
-        <h2>2. Uso del Contenido</h2>
-        <p>Todo el contenido publicado en esta página es de <b>código abierto</b> y está disponible para la comunidad. Se prohíbe subir contenido con derechos de autor sin el permiso adecuado.</p>
-    
-        <h2>3. Responsabilidad del Usuario</h2>
-        <p>Los usuarios son responsables del contenido que suban. En caso de contenido inapropiado, se procederá a su eliminación sin previo aviso.</p>
-    
-        <h2>4. Contenido de Pago</h2>
-        <p>Esta plataforma permite compartir contenido de código abierto, pero si un usuario sube contenido de pago, deberá incluir un enlace al contenido original.</p>
-    
-        <h2>5. Eliminación de Contenido</h2>
-        <p>Nos reservamos el derecho de eliminar cualquier contenido sin previo aviso. No se notificará a los responsables de la eliminación.</p>
-    
-        <h2>6. Cambios en los Términos</h2>
-        <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Se recomienda revisar esta página periódicamente.</p>
-    
-        <h2>7. Contacto</h2>
-        <p>Si tienes dudas sobre estos términos, puedes contactarnos a través de nuestro correo: <a href="/cdn-cgi/l/email-protection#e48e91858a828d8381968b85d1d4d0a48389858d88ca878b89"><span class="__cf_email__" data-cfemail="d9b3acb8b7bfb0bebcabb6b8ece9ed99beb4b8b0b5f7bab6b4">[email&#160;protected]</span></a></p>
+    <div class="header-overlay">
+      <h1 class="title-glow">Bienvenido a la Comunidad</h1>
+      <p class="subtitle">Mods y juegos gratis</p>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const overlay = document.getElementById('overlay');
-            menu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
+  </header>
 
-        function closeMenu() {
-            const menu = document.getElementById('menu');
-            const overlay = document.getElementById('overlay');
-            menu.classList.remove('active');
-            overlay.classList.remove('active');
-        }
+  <!-- CINTA abajo -->
+  <div class="top-bar">
 
-        // Cierra el menú si se hace clic fuera del menú
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('menu');
-            const overlay = document.getElementById('overlay');
-            const menuButton = document.querySelector('.menu-icon');
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger" aria-label="abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-            if (menu.classList.contains('active') && !menu.contains(event.target) && !menuButton.contains(event.target) && event.target.id !== 'menu-close-button') {
-                closeMenu();
-            }
+    <!-- ICONOS NUEVOS -->
+    <div class="top-icons">
 
-            const termsMenu = document.getElementById('terms-menu');
-            if (termsMenu.style.display === 'block' && !termsMenu.contains(event.target) && event.target.id !== 'terms-close-button') {
-                closeTermsMenu();
-            }
-        });
+      <!-- 1: herramientas cruzadas -->
+      <div class="icon-block" id="icon-a">
+        <img src="/public/img/icons/5643823.jpg" alt="">
+      </div>
 
-        function openTermsMenu() {
-            document.getElementById('terms-menu').style.display = 'block';
-        }
+      <!-- 2: skin player -->
+      <div class="icon-block" id="icon-b">
+        <img src="img/icons/player.png" alt="">
+      </div>
 
-        function closeTermsMenu() {
-            document.getElementById('terms-menu').style.display = 'none';
-        }
-    </script>
+      <!-- 3: PC -->
+      <div class="icon-block" id="icon-c">
+        <img src="/public/img/icons/5641007.jpg" alt="">
+      </div>
+
+      <!-- 4: phone -->
+      <div class="icon-block" id="icon-d">
+        <img src="/public/img/icons/5638760.jpg" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTENIDO -->
+
+
+  <section class="last-content">
+  <div class="related-section">
+    <div id="games-carousel"></div>
+  </div>
+</section>
+
+<section class="last-content">
+  <div class="related-section">
+    <div id="mods-carousel"></div>
+  </div>
+</section>
+
+  <footer class="footer"><p>© 2025 Nahuel Community</p></footer>
+
+<script defer src="/script/script.js"></script>
+
 </body>
-
 </html>
