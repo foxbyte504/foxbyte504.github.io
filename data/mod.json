@@ -1,45 +1,225 @@
 [
   {
-  "id": "isMod_ragon-sword",
-  "title": "Dragon Sword",
-  "background": "/public/img/contenido/game/fs15_cover.jpg",
-  "version": "1.20.1",
-  "soporte": ["java"],
-  "filetype": "mcpack",
-  "size": "3,89MB",
-  "download": "https://tuservidor.com/magic-tools.mcaddon",
-  "topgame": true
-  },
-  {
-    "id": "magic-tools",
-    "title": "Magic Tools",
-    "background": "/public/img/contenido/game/fs22_cover.jpg",
+    "id": "scp-dystopia-oldmod",
+    "title": "SCP Dystopia",
+    "background": "/public/img/contenido/moder/IMG_20250215_102329_817.jpg",
     "version": "1.19",
     "soporte": ["bedrock"],
     "filetype": "addon",
     "type": "addon",
-    "download": "https://tuservidor.com/magic-tools.mcaddon",
-    "topgame": true
+    "download": "https://link-target.net/1285228/scp-dystopia"
   },
-      {
-    "id": "dragon-sword",
-    "title": "Dragon Sword",
-    "background": "/public/img/contenido/game/fs15_cover.jpg",
-    "version": "1.20.1",
-    "soporte": ["java"],
-    "filetype": "mcpack",
-    "type": "addon",
-    "topgame": true
-    },
   {
-    "id": "magic-tools",
-    "title": "Magic Tools",
-    "background": "/public/img/contenido/game/fs22_cover.jpg",
+    "id": "epic-bosses-oldmod",
+    "title": "Epic Bosses",
+    "background": "/public/img/contenido/moder/IMG_20250210_180400_503.jpg",
     "version": "1.19",
     "soporte": ["bedrock"],
     "filetype": "addon",
     "type": "addon",
-    "enlace": "https://tuservidor.com/magic-tools.mcaddon",
+    "download": "https://direct-link.net/1285228/epic-bosses"
+  },
+  {
+    "id": "marvel-superheroes-oldmod",
+    "title": "Marvel superheroes",
+    "background": "/public/img/contenido/moder/IMG_20250210_180810_504.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://direct-link.net/1285228/marvel-superheroes"
+  },
+  {
+    "id": "weapons-armors-oldmod",
+    "title": "Weapons & Armors",
+    "background": "/public/img/contenido/moder/WeaponsAndArmors_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://direct-link.net/1285228/weapons-y-armors"
+  },
+  {
+    "id": "bosses-plus-oldmod",
+    "title": "Bosses+",
+    "background": "/public/img/contenido/moder/BPL_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-center.net/1285228/bosses-plus"
+  },
+  {
+    "id": "morph-into-anything-oldmod",
+    "title": "Morph into Anything",
+    "background": "/public/img/contenido/moder/BAM_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-target.net/1285228/morph-into-anything"
+  },
+  {
+    "id": "dragons-oldmod",
+    "title": "Dragons",
+    "background": "/public/img/contenido/moder/Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-center.net/1285228/dragons"
+  },
+  {
+    "id": "wizard-craft-oldmod",
+    "title": "Wizard Craft",
+    "background": "/public/img/contenido/moder/wizardcraftaddon_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-hub.net/1285228/wizard-craft"
+  },
+  {
+    "id": "deadzone-oldmod",
+    "title": "DeadZone",
+    "background": "/public/img/contenido/moder/IMG_20250217_131318_366.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-center.net/1285228/dead-zone",
     "topgame": true
+  },
+  {
+    "id": "alex-cave-oldmod",
+    "title": "Alex cave",
+    "background": "/public/img/contenido/moder/IMG_20250216_193738_063.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-hub.net/1285228/alexs-cave"
+  },
+  {
+    "id": "gravestone-oldmod",
+    "title": "Gravestone",
+    "background": "/public/img/contenido/moder/gravestones_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-target.net/1285228/gravestone",
+    "topgame": true
+  },
+  {
+    "id": "magic-add-on-oldmod",
+    "title": "Magic add-on",
+    "background": "/public/img/contenido/moder/IMG_20250319_164748_437.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://direct-link.net/1285228/magic-add-on"
+  },
+  {
+    "id": "utilities-oldmod",
+    "title": "Utilities",
+    "background": "/public/img/contenido/moder/UTILITIES_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://link-hub.net/1285228/utilities",
+    "topgame": true
+  },
+    {
+    "id": "mount-everest-oldmap",
+    "title": "Mount everest",
+    "background": "/public/img/contenido/moder/MTE_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://link-hub.net/1285228/mount-everest"
+  },
+  {
+    "id": "wolf-evolve-oldmap",
+    "title": "Wolf evolve",
+    "background": "/public/img/contenido/moder/wolfevolve_thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://link-target.net/1285228/wolf-evolve"
+  },
+  {
+    "id": "demons-slayer-oldmap",
+    "title": "Demons slayer",
+    "background": "/public/img/contenido/moder/DemonSlayerWeapons_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://link-center.net/1285228/demon-slayer-word"
+  },
+  {
+    "id": "transformers-oldmap",
+    "title": "Transformers",
+    "background": "/public/img/contenido/moder/TF_thumbnail.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://link-center.net/1285228/transformers-ru"
+  },
+  {
+    "id": "dungeons-and-dragons-oldmap",
+    "title": "Dungeons and dragons",
+    "background": "/public/img/contenido/moder/Dungeons-Dragons-a-New-Quest_thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://link-center.net/1285228/dungeons-and-dragons-new"
+  },
+  {
+    "id": "lethalcraft-v2-oldmap",
+    "title": "LethalCraft V2",
+    "background": "/public/img/contenido/moder/IMG_20250224_010529_214.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://link-target.net/1285228/lethalcraft-v2"
+  },
+  {
+    "id": "angry-birds-oldmap",
+    "title": "Angry Birds",
+    "background": "/public/img/contenido/moder/angrybirds_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://link-center.net/1285228/angry-bird"
+  },
+  {
+    "id": "one-block-supreme-oldmap",
+    "title": "One block supreme",
+    "background": "/public/img/contenido/moder/OneBlock_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://direct-link.net/1285228/mc-one-blocksuprem"
+  },
+  {
+    "id": "in-the-dark-oldmap",
+    "title": "IN THE DARK",
+    "background": "/public/img/contenido/moder/InTheDark_Thumbnail_0.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "map",
+    "type": "map",
+    "enlace": "https://direct-link.net/1285228/in-the-dark"
   }
 ]
