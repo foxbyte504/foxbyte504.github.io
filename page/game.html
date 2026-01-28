@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juegos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style/game.css">
+    <script defer src="../script/game.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <img src="/public/img/icons/logo.jpg" class="logo" alt="Logo">
+        <div>
+            <h1 class="titlegame">Biblioteca de Juegos</h1>
+            <p class="subtitlegame">PC y Android – Descargas rápidas | Testeado en VirusTotal</p>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-image">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h2>Explora cientos de juegos</h2>
+            <p id="heroText">Filtra por plataforma, tamaño o busca por nombre.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CARRUSEL DESTACADOS -->
+<section class="featured">
+    <div class="carousel" id="carousel"></div>
+</section>
+
+<section class="stats">
+    <span id="statTotal">Juegos: 0</span>
+    <span id="statPC">PC: 0</span>
+    <span id="statAndroid">Android: 0</span>
+</section>
+
+<div class="filter-toggle" id="filterToggle">Filtrar juegos por ⇩</div>
+
+<header class="filters-box filters-box-collapsed" id="filterContainer">
+    <select id="filterPlatform" class="filter-select">
+        <option value="all">Plataforma: Todas</option>
+        <option value="android">Teléfono</option>
+        <option value="computer">Computadora</option>
+    </select>
+
+    <select id="filterSize" class="filter-select">
+        <option value="all">Tamaño: Presets</option>
+        <option value="small">Pequeño (-1GB)</option>
+        <option value="medium">Mediano (1GB - 5GB)</option>
+        <option value="big">Grande (+5GB)</option>
+    </select>
+
+    <div class="size-range">
+        <input id="sizeMin" type="text" placeholder="Min (ej: 500MB)">
+        <input id="sizeMax" type="text" placeholder="Max (ej: 2GB)">
+    </div>
+
+    <input id="searchInput" class="search-input" type="text" placeholder="Buscar juego...">
+</header>
+
+<main id="gameList" class="grid"></main>
+
+<div id="noResults" class="no-results hidden">
+    <h3>No se encontraron juegos</h3>
+    <p>Probá cambiar los filtros o el texto de búsqueda.</p>
+</div>
+
+<div id="pagination" class="pagination"></div>
+
+</body>
+</html>

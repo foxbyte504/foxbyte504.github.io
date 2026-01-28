@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style/moder.css">
+    <script defer src="../script/moder.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <img src="../public/img/icons/logo.jpg" class="logo" alt="Logo">
+        <div>
+            <h1 class="titlegame">Biblioteca de Mods</h1>
+            <p class="subtitlegame">Addons, Mapas, Texturas y Shaders</p>
+        </div>
+    </div>
+</header>
+
+<section class="hero" id="hero">
+    <div class="hero-image">
+
+        <!-- IMAGEN ESTÁTICA PARA PC -->
+        <img src="../public/img/portada/Minecraft.png"
+             class="hero-static"
+             alt="Hero icon">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h2>Explora los mejores mods</h2>
+            <p id="heroText">Compatibles con Java y Bedrock</p>
+        </div>
+    </div>
+</section>
+
+<section class="featured">
+    <div class="carousel" id="carousel"></div>
+</section>
+
+<section class="stats">
+    <span id="statTotal">Mods: 0</span>
+    <span id="statAddon">Addon: 0</span>
+    <span id="statMap">Mapas: 0</span>
+    <span id="statTexture">Textura: 0</span>
+    <span id="statShader">Shader: 0</span>
+</section>
+
+<main id="modList" class="grid"></main>
+
+<div id="noResults" class="no-results hidden">
+    <h3>No se encontraron mods</h3>
+</div>
+
+<div id="pagination" class="pagination"></div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+[
+  {
+  "id": "isMod_ragon-sword",
+  "title": "Dragon Sword",
+  "background": "/public/img/contenido/game/fs15_cover.jpg",
+  "version": "1.20.1",
+  "soporte": ["java"],
+  "filetype": "mcpack",
+  "size": "3,89MB",
+  "download": "https://tuservidor.com/magic-tools.mcaddon",
+  "topgame": true
+  },
+  {
+    "id": "magic-tools",
+    "title": "Magic Tools",
+    "background": "/public/img/contenido/game/fs22_cover.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "download": "https://tuservidor.com/magic-tools.mcaddon",
+    "topgame": true
+  },
+      {
+    "id": "dragon-sword",
+    "title": "Dragon Sword",
+    "background": "/public/img/contenido/game/fs15_cover.jpg",
+    "version": "1.20.1",
+    "soporte": ["java"],
+    "filetype": "mcpack",
+    "type": "addon",
+    "topgame": true
+    },
+  {
+    "id": "magic-tools",
+    "title": "Magic Tools",
+    "background": "/public/img/contenido/game/fs22_cover.jpg",
+    "version": "1.19",
+    "soporte": ["bedrock"],
+    "filetype": "addon",
+    "type": "addon",
+    "enlace": "https://tuservidor.com/magic-tools.mcaddon",
+    "topgame": true
+  }
+]

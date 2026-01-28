@@ -1,0 +1,416 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+
+body {
+  margin: 0;
+  background: #0c0c0f;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   CINTA Bajo el carrusel
+   =============================== */
+.top-bar {
+  width: 100%;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  position: relative;
+  box-sizing: border-box;
+  z-index: 5;
+}
+
+/* ===============================
+   ICONOS LIMPIOS (solo imágenes)
+   =============================== */
+.top-icons {
+  margin-left: auto;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* contenedor de cada icono */
+.icon-block {
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* sin bordes ni efecto */
+  border: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+
+  transition: transform .18s ease;
+}
+
+/* efecto al pasar */
+.icon-block:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* IMÁGENES DE LOS ICONOS */
+.icon-block img {
+  width: 58px;
+  height: 58px;
+  image-rendering: auto !important;
+  image-rendering: smooth !important;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  object-fit: contain;
+  display: block;
+}
+
+/* primer icono con saltito */
+#icon-a img {
+  animation: bounceEvery6s 6s infinite ease-in-out;
+}
+
+@keyframes bounceEvery6s {
+  0%, 92%, 100% { transform: translateY(0); }
+  94% { transform: translateY(-9px); }
+}
+
+/* RESPONSIVO */
+@media (max-width:480px) {
+  .icon-block,
+  .icon-block img {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* =========================================================
+   HEADER + CARRUSEL SUPERIOR
+   ========================================================= */
+
+.index-header {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, #0008, #0004);
+}
+
+.title-glow {
+  font-family: "Orbitron", sans-serif;
+  font-size: 32px;
+  text-shadow: 0 0 12px #0ff, 0 0 20px #0ff;
+}
+
+.subtitle {
+  font-size: 15px;
+  opacity: .8;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.top-bar {
+  width: 100%;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.6);
+  z-index: 5;
+}
+
+.top-icons {
+  margin-left: auto;
+  display: flex;
+  gap: 18px;
+}
+
+.icon-block {
+  width: 58px;
+  height: 58px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .18s;
+}
+
+.icon-block:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.icon-block img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+/* =========================================================
+   HAMBURGUESA + SIDEBAR
+   ========================================================= */
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #0008;
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 210px;
+  height: 100%;
+  background: #0c0c0f;
+  padding: 25px;
+  transition: .35s ease;
+  box-shadow: 0 0 15px #0ff4;
+  z-index: 1001;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px 5px;
+  color: #0ff;
+  border-bottom: 1px solid #033;
+}
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+
+.last-content {
+  padding: 20px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+/* =========================================================
+   GRID + TARJETAS
+   ========================================================= */
+
+.game-card {
+    flex: 0 0 180px;
+    background: #111;
+    border: 1px solid #033;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .15s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+.game-cover {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.game-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 38px;              /* 🔑 CLAVE */
+    padding: 0 8px;
+    background: #111;
+    overflow: hidden;
+}
+
+.game-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.game-title {
+    font-size: 13px;
+    line-height: 1;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.game-card > .game-title {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 8px;
+    background: #111;
+}
+
+/* =========================
+   FILA SCROLL REAL
+   ========================= */
+
+.carousel-row {
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    padding-bottom: 8px;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+}
+
+.carousel-row::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carousel-row::-webkit-scrollbar-thumb {
+    background: #033;
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   CARRUSEL HORIZONTAL (ANDROID SAFE)
+   ========================================================= */
+
+.related-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-viewport {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 6px;
+}
+
+.arrow {
+  width: 34px;
+  height: 34px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .carousel-arrows {
+    display: none;
+  }
+
+  .icon-block,
+  .icon-block img {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  background: #060606;
+  color: #999;
+}

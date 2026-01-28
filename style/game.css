@@ -1,0 +1,441 @@
+/* ===================== BASE ===================== */
+
+:root{
+    --bg:#0c0c0f;
+    --card:#111;
+    --accent:#0ff;
+    --muted:#999;
+}
+
+*{ box-sizing:border-box }
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:#fff;
+    font-family:"Outfit",sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ===================== HEADER ===================== */
+
+.topbar{
+    background:rgba(10,10,14,.8);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid #0ff2;
+    padding: 1px 18px;
+    display:flex;
+    align-items:center;
+}
+
+.brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.logo{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    object-fit:cover;
+    border:2px solid #0ff3;
+}
+
+.titlegame{
+    margin:0;
+    font-size: 26px;
+}
+
+.subtitlegame{
+    margin:0;
+    color:#9cc;
+    font-size:13px;
+    position:relative;
+    top:-4px;
+}
+
+/* ===================== HERO (FADE REAL) ===================== */
+
+.hero{
+    position:relative;
+    padding:60px 20px;
+    text-align:center;
+    top: 0px;
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+}
+
+/* capa actual */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:var(--hero-bg);
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1s ease;
+    z-index:0;
+}
+
+/* cuando JS activa fade */
+.hero.fade::before{
+    opacity:1;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.65),#0c0c0f);
+    z-index:1;
+}
+
+.hero h2,
+.hero p{
+    position:relative;
+    z-index:2;
+}
+
+.hero h2{
+    margin:0;
+    font-size:26px;
+}
+
+.hero p{
+    margin-top:8px;
+    color:#bbb;
+}
+
+/* ===================== HERO DESKTOP FIX ===================== */
+
+@media (min-width:1100px){
+
+    .hero{
+        padding:0;
+        background:none;
+        min-height:420px;
+        display:block;
+    }
+
+    .hero-image{
+        width:80%;
+        height:100%;
+        min-height:420px;
+        position:relative;
+        display:flex;
+        align-items:center;
+    }
+
+    .hero-image::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background-image:var(--hero-bg);
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:left center;
+        z-index:0;
+    }
+
+    .hero-overlay{
+        background:linear-gradient(
+            90deg,
+            rgba(0,0,0,.75) 0%,
+            rgba(0,0,0,.45) 35%,
+            rgba(0,0,0,0) 65%
+        );
+    }
+
+    .hero-content{
+        position:relative;
+        z-index:2;
+        max-width:520px;
+        padding:40px;
+        text-align:left;
+    }
+}
+
+/* ===================== STATS ===================== */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:12px 0;
+    color:#8df;
+    font-size:14px;
+    border-bottom:1px solid #033;
+}
+
+/* ===================== GRID JUEGOS ===================== */
+
+.grid{
+    padding:15px;
+    display:grid;
+    gap:15px;
+}
+
+@media(max-width:640px){
+    .grid{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(min-width:641px) and (max-width:1023px){
+    .grid{ grid-template-columns:repeat(3,1fr); }
+}
+
+@media(min-width:1024px){
+    .grid{ grid-template-columns:repeat(4,1fr); }
+}
+
+/* ===================== GAME CARD ===================== */
+
+.game-card{
+    background:#111;
+    border-radius:14px;
+    border:1px solid #033;
+    box-shadow:0 0 8px #0ff3;
+    overflow:hidden;
+    transition:.35s ease;
+}
+
+.game-card:hover{
+    transform:translateY(-6px) scale(1.03);
+    box-shadow:0 0 18px #0ff8;
+}
+
+.game-cover{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+.game-title{
+    margin:10px;
+    font-size:15px;
+    text-align:center;
+    color:#fff;
+}
+
+/* ===================== PAGINACIÓN ===================== */
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin:25px 0;
+}
+
+.page-btn{
+    min-width:32px;
+    height:32px;
+    background:transparent;
+    border:1px solid #033;
+    color:#0ff;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.page-btn:hover{
+    background:rgba(0,255,255,.15);
+}
+
+.page-btn.active{
+    border-color:#0ff;
+    background:rgba(0,255,255,.25);
+}
+
+/* ===================== FILTROS ===================== */
+
+.filter-toggle{
+    background:#111;
+    padding:10px;
+    border:1px solid #033;
+    border-radius:8px;
+    cursor:pointer;
+    margin:10px;
+    text-align:center;
+}
+
+.filters-box{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:10px;
+    background:#0c0c0f;
+    border-bottom:1px solid #033;
+}
+
+.filters-box-collapsed{
+    max-height:0;
+    overflow:hidden;
+    padding:0 12px;
+    transition:max-height .35s ease;
+}
+
+.filters-box-expanded{
+    max-height:400px;
+}
+
+.filter-select,
+.search-input{
+    flex:1 1 calc(50% - 10px);
+    background:#111;
+    color:#fff;
+    border:1px solid #033;
+    padding:8px 10px;
+    border-radius:8px;
+}
+
+.size-range{
+    display:flex;
+    gap:10px;
+    flex:1 1 100%;
+}
+
+.size-range input{
+    flex:1;
+    background:#111;
+    color:#fff;
+    border:1px solid #033;
+    padding:8px 10px;
+    border-radius:8px;
+}
+
+/* ===================== CARRUSEL ===================== */
+
+.featured{
+    padding:20px;
+    text-align:center;
+}
+
+.carousel{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+}
+
+.carousel-card{
+    width:220px;
+    height: 105px;
+    border-radius:8px;
+    overflow:hidden;
+    background:#111;
+    border:1px solid #033;
+    transition:transform .6s ease, opacity .6s ease;
+}
+
+.carousel-card img{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+.carousel-title{
+    font-size:12px;
+    text-align:center;
+    padding:2px;
+}
+
+.carousel-center{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #0ff6;
+    z-index:2;
+}
+
+.carousel-side{
+    opacity:.45;
+    transform:scale(.9);
+}
+
+/* ===================== PC: COLUMNA DERECHA ===================== */
+
+@media(min-width:1100px){
+
+    .featured{
+        position:absolute;
+        top:120px;
+        right:0;
+        width:20%;
+        padding:20px 10px;
+    }
+
+    .carousel{
+        flex-direction:column;
+        align-items:center;
+        gap:14px;
+    }
+
+    .carousel-card{
+        width:200px;
+        height: auto;
+    }
+}
+
+/* ===================== SKELETON ===================== */
+
+.skeleton{
+    height:180px;
+    border-radius:12px;
+    background:linear-gradient(90deg,#111,#222,#111);
+    background-size:200% 100%;
+    animation:skeleton 1.2s infinite;
+}
+
+@keyframes skeleton{
+    from{ background-position:200% }
+    to{ background-position:-200% }
+}
+
+/* ===================== MISC ===================== */
+
+.no-results{
+    text-align:center;
+    padding:40px;
+    color:#9cc;
+}
+
+.hidden{ display:none }
+
+@media (min-width:1100px){
+    .hero::before{
+        display:none;
+    }
+}
+
+@media (min-width:1100px){
+    .hero{
+        background-image:none !important;
+    }
+}
+
+/* ===================== ICONO EN GAME CARD ===================== */
+
+.game-title-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:4px;
+}
+
+.game-icon{
+    width:32px;
+    height:32px;
+    border-radius:12px;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.game-title{
+    margin:0;
+    font-size:15px;
+    line-height:1.2;
+    text-align:left;
+}
