@@ -193,3 +193,16 @@ async function loadModsCarousel() {
     }
 }
 
+/* =========================
+   LOADER CONTROL
+   ========================= */
+document.body.classList.add("loading");
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("page-loader");
+
+    setTimeout(() => {
+        loader.classList.add("hidden");
+        document.body.classList.remove("loading");
+    }, 300);
+});

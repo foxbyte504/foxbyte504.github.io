@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateStats(list) {
-        statTotal.textContent = `Mods: ${list.length}`;
+        statTotal.textContent = ``;
         statAddon.textContent = `Addon: ${list.filter(m => m.type === "addon").length}`;
         statMap.textContent = `Mapas: ${list.filter(m => m.type === "map").length}`;
         statTexture.textContent = `Textura: ${list.filter(m => m.type === "texture").length}`;
